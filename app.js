@@ -1,34 +1,24 @@
-var budgetController = (function() {
-    var x = 23;
-    
-    var add = function(a) {
-        return x + a;
-    }
-    
-    return {
-        publicTest : function(b) {
-            return add(b);
-        }
-    }
-})();
+// BUDGET CONTROLLER
+var budgetController = (function () {
 
-var UIController = (function() {
-    
     // Some code
-    
+
 })();
 
 
-var controller = (function(budgetCtrl, UICtrl) {
-    
-    var z = budgetCtrl.publicTest(5);
-    
-    return {
-        anotherPublic : function() {
-            console.log(z);
-        }
-    }
-    
-    
-})(budgetController, UIController);
 
+// UI CONTROLLER
+var UIController = (function () {
+
+    // Some code
+
+})();
+
+
+
+// GLOBAL APP CONTROLLER
+var controller = (function (budgetCtrl, UICtrl) {
+
+    // Some code
+
+})(budgetController, UIController);

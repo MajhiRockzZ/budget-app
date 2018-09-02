@@ -1,10 +1,29 @@
 // BUDGET CONTROLLER
 var budgetController = (function () {
 
-    // Some code
+    var Expense = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+
+    var Income = function (id, description, value) {
+        this.id = id;
+        this.description = description;
+        this.value = value;
+    };
+
 
 })();
 
+
+/////////////////////////////////////
+// Experiment Data
+////////////////////////////////////
+
+
+
+--------------------------------------
 
 
 // UI CONTROLLER
@@ -25,8 +44,8 @@ var UIController = (function () {
                 value: document.querySelector(DOMstrings.inputValue).value
             };
         },
-        
-        getDOMstrings: function() {
+
+        getDOMstrings: function () {
             return DOMstrings;
         }
     };
@@ -37,7 +56,7 @@ var UIController = (function () {
 
 // GLOBAL APP CONTROLLER
 var controller = (function (budgetCtrl, UICtrl) {
-    
+
     var DOM = UICtrl.getDOMstrings();
 
     var ctrlAddItem = function () {

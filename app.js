@@ -1,3 +1,7 @@
+//////////////////
+// CHECKPOINT ONE
+//////////////////
+
 // BUDGET CONTROLLER
 var budgetController = (function () {
 

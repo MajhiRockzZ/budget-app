@@ -106,7 +106,7 @@ var UIController = (function () {
             // Replace the placeholder text with some actual data
             newHtml = html.replace('%id%', obj.id);
             newHtml = newHtml.replace('%description%', obj.description);
-            newHtml = newHtml.replace('%values%', obj.value);
+            newHtml = newHtml.replace('%value%', obj.value);
 
             // Insert the HTML into the DOM
             document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
@@ -152,6 +152,15 @@ var controller = (function (budgetCtrl, UICtrl) {
         });
     };
 
+    var updateBudget = function() {
+        // 1. Calculate the budget
+
+        // 2. Return the budget
+
+        // 3. Display the budget on the UI
+    };
+
+
     var ctrlAddItem = function () {
         var input, newItem;
 
@@ -168,9 +177,7 @@ var controller = (function (budgetCtrl, UICtrl) {
         UICtrl.clearFields();
 
         // 5. Calculate and update budget
-
-
-        // 6. Calculate and update percentages
+        updateBudget();
     };
 
     return {

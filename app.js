@@ -120,7 +120,7 @@ var UIController = (function () {
 
             fieldsArr = Array.prototype.slice.call(fields);
 
-            fieldsArr.forEach(function(current, index, array) {
+            fieldsArr.forEach(function (current, index, array) {
                 current.value = "";
             });
 
@@ -152,7 +152,7 @@ var controller = (function (budgetCtrl, UICtrl) {
         });
     };
 
-    var updateBudget = function() {
+    var updateBudget = function () {
         // 1. Calculate the budget
 
         // 2. Return the budget
@@ -167,17 +167,20 @@ var controller = (function (budgetCtrl, UICtrl) {
         // 1. Get the field input data
         input = UICtrl.getInput();
 
-        // 2. Add the item to the budget controller
-        newItem = budgetCtrl.addItem(input.type, input.description, input.value);
+        if (input.description !== "" && !isNaN(input.value) && input.value > 0) {
 
-        // 3. Add the item to the UI
-        UICtrl.addListItem(newItem, input.type);
+            // 2. Add the item to the budget controller
+            newItem = budgetCtrl.addItem(input.type, input.description, input.value);
 
-        // 4. Clear the fields
-        UICtrl.clearFields();
+            // 3. Add the item to the UI
+            UICtrl.addListItem(newItem, input.type);
 
-        // 5. Calculate and update budget
-        updateBudget();
+            // 4. Clear the fields
+            UICtrl.clearFields();
+
+            // 5. Calculate and update budget
+            updateBudget();
+        }
     };
 
     return {
